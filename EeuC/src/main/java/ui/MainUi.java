@@ -43,6 +43,8 @@ public class MainUi extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,13 +111,37 @@ public class MainUi extends javax.swing.JFrame {
 
         jMenu1.setText("Utility");
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setText("Electricity");
+        jMenuItem1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jMenuItem1AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                jMenuItem1AncestorMoved(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jMenuItem1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jMenuItem1StateChanged(evt);
+            }
+        });
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
             }
         });
         jMenu1.add(jMenuItem1);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem2.setText("Water");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem3.setText("Internet");
+        jMenu1.add(jMenuItem3);
 
         menuBar.add(jMenu1);
 
@@ -143,6 +169,20 @@ public class MainUi extends javax.swing.JFrame {
        Electric frm=new Electric();
        frm.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuItem1AncestorAdded
+
+   
+    }//GEN-LAST:event_jMenuItem1AncestorAdded
+
+    private void jMenuItem1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jMenuItem1StateChanged
+Electric electricityFrame = new Electric();
+electricityFrame.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1StateChanged
+
+    private void jMenuItem1AncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuItem1AncestorMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1AncestorMoved
 
     /**
      * @param args the command line arguments
@@ -192,6 +232,8 @@ public class MainUi extends javax.swing.JFrame {
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
@@ -200,3 +242,4 @@ public class MainUi extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 }
+
